@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: resume-evaluator-api
+    env: python
+    buildCommand: "pip install uv && uv sync"
+    startCommand: "uv run uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+
+  - type: web
+    name: resume-evaluator-ui
+    env: python
+    buildCommand: "pip install uv && uv sync"
+    startCommand: "uv run streamlit run app_ui.py --server.port $PORT --server.address 0.0.0.0"
+    envVars:
+      - key: API_URL
+        value: https://resume-evaluator-api.onrender.com/evaluate-resume

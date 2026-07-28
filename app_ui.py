@@ -6,8 +6,9 @@ Uploads a resume, sends it to the FastAPI backend, displays the match result.
 
 import streamlit as st
 import requests
+import os
 
-API_URL = "http://127.0.0.1:8000/evaluate-resume"
+API_URL = os.environ.get("API_URL", "http://127.0.0.1:8000/evaluate-resume")
 
 st.set_page_config(page_title="Resume Evaluator", page_icon="📄")
 
