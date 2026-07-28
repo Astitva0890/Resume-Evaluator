@@ -55,7 +55,7 @@ Streamlit (app_ui.py) → upload UI + results display
 
 **1. Clone and install dependencies**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Astitva0890/Resume-Evaluator
 cd resume-evaluator
 uv sync
 ```
